@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: "Open Sans";
+  background: #ffe4b5;
+}
+
+header.header {
+  display: flex;
+  justify-content: space-between;
+  background: #ffe4b5;
+  border-bottom: 2px solid #ffdab9;
+}
+
+nav {
+  padding: 15px;
+}
+
+header.header nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+header.header nav div {
+  padding: 0px 15px 0px 15px;
+}
+
+header.header a {
+  text-decoration: none;
+  color: #ffa07a;
+  transition: all 0.5s ease 0s;
+}
+
+header.header a:hover {
+  color: #ff7f50;
+}
+
+header.header div.icon a {
+  color: #030303;
+  font-family: "Poppins";
+  font-size: 30px;
+}
+
+header.header div.icon {
+  padding: 10px 0px 10px 10px;
+}
+
+header.header div.login {
+  margin: 10px 20px 10px 10px;
+}
+
+header.header div.login a[href="/login"] {
+  border: 2px solid #ff7061;
+  background: #ff6347;
+  display: inline-block;
+  color: #fafafa;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0px 6px;
+}
+
+header.header div.login a[href="/registration"] {
+  border: 2px solid #22ffaa;
+  background: #00fa9a;
+  display: inline-block;
+  color: #fafafa;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0px 6px;
+}
+
+div.content {
+  padding: 10px 10%;
+  background: #fffacd;
+}
+
+h1.title {
+  font-size: 40px;
+  font-family: "Poppins";
+}
+
+img.lib {
+  border: 10px solid #ffe4b5;
+}
+
+i {
+  float: right;
+  clear: both;
+}
+
+h2.title {
+  font-size: 37px;
+  font-family: "Poppins";
+}
+
+footer.footer {
+  background: #ffe4b5;
+  border-top: 2px solid #ffdab9;
+  padding: 10px 10%;
+}
+
+footer.footer a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 30px;
+}
