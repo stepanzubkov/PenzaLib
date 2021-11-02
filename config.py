@@ -12,4 +12,4 @@ MAIL_PORT = 587
 MAIL_USE_TLS = True
 MAIL_USERNAME = 'Penza Library'
 MAIL_DEFAULT_SENDER = 'fiveweek234@gmail.com'
-MAIL_PASSWORD = 'Zubkov123456'
+MAIL_PASSWORD = ''  # Не нужно отправлять свои пароли в удалённый репозиторий

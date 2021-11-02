@@ -1,11 +1,11 @@
 # Penza Library
 
-Penza Library - сайт пензенской городской библиотеки. Это не настоящий сайт библиотеки, лишь пример сайт библиотеки.
+Penza Library - сайт пензенской городской библиотеки. Это не настоящий сайт библиотеки, лишь пример сайта библиотеки.
 
 Для локальной развёртки создайте базу данных коммандой в psql:
 
 ```sql
-CREATE DATABASE xteams;
+CREATE DATABASE plib;
 ```
 
 Затем откройте командную строку и пропишите следущие команды:
@@ -24,4 +24,4 @@ flask db migrate -m "Сообщение"
 flask db upgrade
 ```
 
-Перед тем как запускать файл app.py, измените значения в файле config.py в переменной SQLALCHEMY_DATABASE_URI
+Перед тем как запускать файл app.py, измените значения в файле config.py в переменных SQLALCHEMY_DATABASE_URI, MAIL_DEFAULT_SENDER, MAIL_PASSWORD
