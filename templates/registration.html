@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+<center>
+    <h1 class="title">Регистрация</h1>
+    {% for cat,msg in get_flashed_messages(True) %}
+    <p class='{{cat}}'>{{msg}}</p>
+    {% endfor %}
+    <form action="/registration" method="post" class="regisrtation">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.name not in ['csrf_token', 'submit'] %}
+            {% if field.errors %}
+                <p>{{ field.label }}</p>
+                <p>{{ field(class='error-registration', placeholder=field.errors[0], value='') }}</p>
+            {% else %}
+                    <p>{{ field.label }}</p>
+                    <p>{{ field(class='normal-registration') }}</p>
+            {% endif %}
+        {% endfor %}
+        <p>{{ form.submit(class="registration") }}
+    </form>
+</center>
+{% endblock %}

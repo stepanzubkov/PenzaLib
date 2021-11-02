@@ -20,11 +20,12 @@ migrate = Migrate()
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
-    nickname = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(1000), nullable=False)
     age = db.Column(db.Integer, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow())
     verified = db.Column(db.Boolean, default=False)
+    access_key = db.Column(db.String(100), nullable=False)
     reservations = db.relationship(
         'Reservations', backref='user', lazy='dynamic', uselist=True)
 

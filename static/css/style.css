@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 body {
   margin: 0;
@@ -80,7 +81,7 @@ div.content {
 
 h1.title {
   font-size: 40px;
-  font-family: "Poppins";
+  font-family: "Zen Antique Soft";
 }
 
 img.lib {
@@ -94,7 +95,7 @@ i {
 
 h2.title {
   font-size: 37px;
-  font-family: "Poppins";
+  font-family: "Zen Antique Soft";
 }
 
 footer.footer {
@@ -107,4 +108,32 @@ footer.footer a {
   display: inline-block;
   text-decoration: none;
   padding: 10px 30px;
+}
+
+.normal-registration,
+.error-registration {
+  width: 400px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  outline: 0;
+  outline-offset: 0;
+  border: 2px solid rgb(30, 30, 50);
+}
+
+input.registration {
+  width: 500px;
+  height: 50px;
+  outline: 0;
+  outline-offset: 0;
+  font-size: 27px;
+  border-radius: 10px;
+  background: rgb(50, 255, 50);
+  border: 4px solid rgb(30, 255, 30);
+  margin: 15px;
+  color: #fafafa;
+}
+
+.error-registration::-webkit-input-placeholder {
+  color: rgb(240, 50, 50);
 }
