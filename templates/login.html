@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+<center>
+    <h1 class="title">Вход</h1>
+    {% for cat,msg in get_flashed_messages(True) %}
+    <p class='{{cat}}'>{{msg}}</p>
+    {% endfor %}
+    <form action="/login" method="post" class="login">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.name not in ['csrf_token', 'submit', 'remember'] %}
+            {% if field.errors %}
+                <p>{{ field.label }}</p>
+                <p>{{ field(class='error-login', placeholder=field.errors[0], value='') }}</p>
+            {% else %}
+                <p>{{ field.label }}</p>
+                <p>{{ field(class='normal-login') }}</p>
+            {% endif %}
+        {% endfor %}
+        <p>{{ form.remember(class='checkbox') }} {{ form.remember.label }}</p>
+        <p>{{ form.submit(class="login") }}</p>
+    </form>
+</center>
+
+{% endblock %}

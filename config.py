@@ -10,6 +10,7 @@ SQLALCHEMY_DATABASE_URI = 'postgresql+pg8000://stepan:123456@localhost:5432/plib
 MAIL_SERVER = 'smtp.googlemail.com'
 MAIL_PORT = 587
 MAIL_USE_TLS = True
-MAIL_USERNAME = 'Penza Library'
+MAIL_USERNAME = 'fiveweek234@gmail.com'
 MAIL_DEFAULT_SENDER = 'fiveweek234@gmail.com'
-MAIL_PASSWORD = ''  # Не нужно отправлять свои пароли в удалённый репозиторий
+# Не нужно отправлять свои пароли в удалённый репозиторий
+MAIL_PASSWORD = ''

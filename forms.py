@@ -14,3 +14,12 @@ class RegistrationForm(FlaskForm):
         'Пустое поле'), Length(min=0, max=100, message='Недопустимая длина')])
     age = SelectField('Возраст', choices=[(i, i) for i in range(10, 101)])
     submit = SubmitField('Зарегестрироваться')
+
+
+class LoginForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired('Пустое поле'), Length(
+        min=0, max=100, message='Недопустимая длина'), Email('Неправильная запись')])
+    password = PasswordField('Пароль', validators=[DataRequired(
+        'Пустое поле'), Length(min=0, max=100, message='Недопустимая длина')])
+    remember = BooleanField('Запомнить меня')
+    submit = SubmitField('Войти')
