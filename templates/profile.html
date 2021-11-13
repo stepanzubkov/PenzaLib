@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+<h1>Профиль</h1>
+<div class="userinfo">
+    <img src="/static/images/avatar.jpg" alt="Аватар" width='250px' height='250px'>
+    <div class='mainuserinfo'>
+        <h2>{{user.name}}</h2>
+        <p>{{user.age}} лет</p>
+    </div>
+</div>
+<hr>
+<div class="userbooks">
+    {% if user.reservations[0] %}
+        {% for book in user.reservations %}
+            <p>{{book.name}}</p>
+            <p>{{book.author}}</p>
+        {% endfor %}
+    {% else %}
+        <p>У вас нет книг</p>
+    {% endif %}
+</div>
+{% endblock %}

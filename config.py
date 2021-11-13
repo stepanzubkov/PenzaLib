@@ -13,4 +13,4 @@ MAIL_USE_TLS = True
 MAIL_USERNAME = 'fiveweek234@gmail.com'
 MAIL_DEFAULT_SENDER = 'fiveweek234@gmail.com'
 # Не нужно отправлять свои пароли в удалённый репозиторий
-MAIL_PASSWORD = ''
+MAIL_PASSWORD = 'Zubkov123456'

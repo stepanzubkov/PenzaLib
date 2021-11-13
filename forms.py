@@ -23,3 +23,18 @@ class LoginForm(FlaskForm):
         'Пустое поле'), Length(min=0, max=100, message='Недопустимая длина')])
     remember = BooleanField('Запомнить меня')
     submit = SubmitField('Войти')
+
+
+class BooksForm(FlaskForm):
+    name = StringField('Название', validators=[Length(
+        min=0, max=50, message='Недопустимая длина')])
+    author = StringField('Автор', validators=[Length(
+        min=0, max=50, message='Недопустимая длина')])
+    sorting = SelectField('Сортировка', choices=[
+        ('standart', 'По умолчанию'),
+        ('by_name', 'По имени'),
+        ('by_author', 'По автору'),
+        ('count', 'По возрастанию количества'),
+        ('desc_count', 'По убыванию количества')
+    ])
+    submit = SubmitField('Поиск')

@@ -113,7 +113,9 @@ footer.footer a {
 .normal-registration,
 .error-registration,
 .normal-login,
-.error-login {
+.error-login,
+.normal-books,
+.error-books {
   width: 400px;
   height: 30px;
   border-radius: 10px;
@@ -121,6 +123,11 @@ footer.footer a {
   outline: 0;
   outline-offset: 0;
   border: 2px solid rgb(30, 30, 50);
+}
+
+.error-books,
+.normal-books {
+  margin: 10px;
 }
 
 input.registration,
@@ -138,11 +145,46 @@ input.login {
 }
 
 .error-registration::-webkit-input-placeholder,
-.error-login::-webkit-input-placeholder {
+.error-login::-webkit-input-placeholder,
+.error-books::-webkit-input-placeholder {
   color: rgb(240, 50, 50);
 }
 
 input.checkbox {
   width: 25px;
   height: 25px;
+}
+
+div.userinfo {
+  display: flex;
+}
+
+div.mainuserinfo {
+  padding: 0px 20px;
+}
+
+img[alt="Аватар"] {
+  border-radius: 10px;
+}
+
+img[alt="Книга"] {
+  float: left;
+}
+
+div.book {
+  clear: both;
+  padding: 50px 0px;
+}
+
+input.search {
+  width: 300px;
+  height: 50px;
+  outline: 0;
+  outline-offset: 0;
+  font-size: 23px;
+  border-radius: 10px;
+  background: rgb(230, 40, 40);
+  border: 4px solid rgb(240, 20, 20);
+  margin: 15px;
+  color: white;
 }

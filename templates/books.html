@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+<h1>Поиск книг</h1>
+<form action="/books" method="get" class='books'>
+    {{ form.hidden_tag() }}
+    {% for field in form if field.name not in ['csrf_token', 'submit'] %}
+        {% if field.errors[0] %}
+            <span style='float: left;'>
+                <p>{{ field.label }}</p>
+                <p>{{ field(class='error-books') }}</p>
+            </span>
+        {% else %}
+            <span style='float: left;'>
+                <p>{{ field.label }}</p>
+                <p>{{ field(class='normal-books') }}</p>
+            </span>
+        {% endif %}
+    {% endfor %}
+    <p style='clear: both;'>{{ form.submit(class='search') }}</p>
+</form>
+<div class="books">
+    {% for book in books %}
+        <div class="book">
+            <hr>
+            <p><img src="/static/images/{{choice(['green', 'blue', 'red', 'black', 'yellow'])}}-book.png" alt="Книга" width='200' height="200"></p>
+            <h4>{{book.name}}</h4>
+            <p>{{book.author}}</p>
+            <p>В наличии: {{book.available_count}}</p>
+        </div>
+    {% endfor %}
+    <hr>
+</div>
+{% endblock %}
