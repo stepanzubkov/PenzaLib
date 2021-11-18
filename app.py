@@ -115,6 +115,7 @@ def profile():
 
 
 @app.route('/books', methods=['GET'])
+@login_required
 def books():
     form = BooksForm()
     user = Users.query.get(current_user.get_id())
@@ -142,6 +143,17 @@ def books():
         case _:
             pass
     return render_template('books.html', form=form, books=books, choice=choice)
+
+
+@app.route('/book/<name>', methods=['GET'])
+@login_required
+def book(name):
+    book = Books.query.filter_by(name=name).first()
+    if book is None:
+        abort(404)
+    rsv = Reservations.query.filter_by(
+        user_id=current_user.get_id(), book_id=book.id).first()
+    return render_template('book.html', book=book, choice=choice, rsv=rsv)
 
 
 # Run app

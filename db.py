@@ -47,3 +47,4 @@ class Reservations(db.Model):
     book_id = db.Column(db.Integer, db.ForeignKey('books.id'))
     expiry_date = db.Column(
         db.DateTime, default=datetime.utcnow() + timedelta(days=30))
+    is_read = db.Column(db.Boolean, default=False)

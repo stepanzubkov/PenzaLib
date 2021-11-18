@@ -24,7 +24,7 @@
         <div class="book">
             <hr>
             <p><img src="/static/images/{{choice(['green', 'blue', 'red', 'black', 'yellow'])}}-book.png" alt="Книга" width='200' height="200"></p>
-            <h4>{{book.name}}</h4>
+            <h4><a href="/book/{{book.name}}">{{book.name}}</a></h4>
             <p>{{book.author}}</p>
             <p>В наличии: {{book.available_count}}</p>
         </div>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+<div class="book-main">
+    <img src="/static/images/{{ choice(['green', 'blue', 'red', 'black', 'yellow']) }}-book.png" alt="Книга главная" class='main-page-avatar' width='230'>
+    <div class="book-main-info">
+        <h2>{{book.name}}</h2>
+        <p><b>Автор: </b>{{book.author}}</p>
+        <p><b>Всего в библиотеке</b>: {{book.count}} шт.</p>
+        <p><b>В наличии:</b> {{book.available_count}} шт.</p>
+    </div>
+</div>
+<p>{{book.info}}</p>
+<p>
+    {% if rsv  %}
+        {% if rsv.is_read %}
+            <p><b>Вы уже прочитали эту кингу</b></p>
+        {% else %}
+            <p><b>Вы читаете эту книгу</b></p>
+        {% endif %}
+    {% else %}
+        <p><b>Вы ещё не читали эту книгу</b></p>
+    {% endif %}
+</p>
+{% endblock %}

@@ -188,3 +188,11 @@ input.search {
   margin: 15px;
   color: white;
 }
+
+div.book-main {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
