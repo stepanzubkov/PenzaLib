@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, BooleanField, TextAreaField, FileField, PasswordField, SelectField, RadioField, ValidationError
-from wtforms.validators import DataRequired, Email, Length, NoneOf
+from wtforms import StringField, SubmitField, BooleanField, TextAreaField, PasswordField, SelectField
+from wtforms.validators import DataRequired, Email, Length
 
 
 class RegistrationForm(FlaskForm):
@@ -38,3 +38,25 @@ class BooksForm(FlaskForm):
         ('desc_count', 'По убыванию количества')
     ])
     submit = SubmitField('Поиск')
+
+
+class AddBookForm(FlaskForm):
+    name = StringField('Название', validators=[DataRequired('Пустое поле'), Length(min=0, max=100,
+                                                                                   message='Неверная длина')])
+    author = StringField('Автор', validators=[DataRequired('Пустое поле'), Length(min=0, max=100,
+                                                                                  message='Неверная длина')])
+    info = TextAreaField('Описание', validators=[DataRequired('Пустое поле')])
+    count = SelectField('Количество', choices=[(i, i) for i in range(1, 101)])
+    submit = SubmitField('Создать')
+
+
+class AddReservationForm(FlaskForm):
+    user = SelectField('Читатель', coerce=int)
+    book = SelectField('Книга', coerce=int)
+    submit = SubmitField('Добавить')
+
+
+class AcceptReservationForm(FlaskForm):
+    user = SelectField('Читатель', coerce=int)
+    book = SelectField('Книга', coerce=int)
+    submit = SubmitField('Принять')

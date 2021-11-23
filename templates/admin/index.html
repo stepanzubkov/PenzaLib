@@ -1,0 +1,25 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+{{ super() }}
+<h1>Админ-панель</h1>
+<div class="admin-main">
+    <a href="/admin/book" class='adminlink'>Добавить книгу</a>
+    <a href="/admin/add-reservation" class='adminlink'>Добавить бронирование книги</a>
+    <a href="/admin/accept-reservation" class='adminlink'>Принять книгу</a>
+</div>
+<h3>Новые пользователи</h3>
+<hr>
+{% for u in users %}
+    <div class="new-user">
+        <p>{{u.id}}, <b>{{u.name}}</b>, {{u.age}} лет, 
+            <a href="mailto:{{u.email}}">{{u.email}}</a>,
+            {% if u.verified %}
+                Проверен
+            {% else %}
+                Не проверен
+            {% endif %}
+        </p>
+        <hr>
+    </div>
+{% endfor %}
+{% endblock %}

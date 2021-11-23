@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <meta charset='utf-8'>
+    <!--
+        Не используется, так как на мобильных устройствах некорекктно отображается
+        TODO: Сделать адаптивную вёрстку
+        <meta name='viewport' content='width=100% initial-scale=1.0'>
+    -->
+    <link rel='stylesheet' href='../static/css/style.css' type='text/css'>
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <title>Admin penza library</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="icon">
+            <a href="/admin/"><img src="/static/images/favicon.ico" alt="Лого" width="40px">Admin panel</a>
+        </div>
+        <nav class="nav">
+            <div class="nav_element"><a href="/">Вернуться на главный сайт</a></div>
+        </nav>
+    </header>
+    <div class="content">
+        {% block content %}
+            
+        {% endblock content %}
+    </div>
+    <footer class="footer">
+        <p>
+            <a href="/books" class="ftr_element">Книги</a>
+            <a href="/profile" class="ftr_element">Профиль</a>
+            <a href="/about" class="ftr_element">О Нас</a>
+        </p>
+        <p>
+            <a href="mailto:backend_devel0per@vk.com">Связаться с нами</a>
+            <a href="https://vk.com/backend_dvlpr">Мы в ВК</a>
+            <a href="https://web.telegram.org/z/">Мы в Telegram</a>
+            <a href="https://www.instagram.com/adskiy_pitoner/">Мы в Instagram</a>
+        </p>
+        <p>© 2021 Penza Lib</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+    {{ super() }}
+    <h1>Принять книгу</h1>
+    {% for msg in get_flashed_messages() %}
+        <p><b style="color: red;">{{ msg }}</b></p>
+    {% endfor %}
+
+    <form action="/admin/accept-reservation" class="add_rsv" method="post">
+        {{ form.csrf_token() }}
+        {% for field in form if field.name not in ['csrf_token', 'submit'] %}
+            <p>{{ field.label(class='add-rsv-normal') }} {{ field(class='add-rsv-normal') }}</p>
+        {% endfor %}
+        {{ form.submit(class='add-rsv') }}
+    </form>
+
+{% endblock %}

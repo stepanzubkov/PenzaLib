@@ -1,0 +1,16 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+    {{ super() }}
+    <h1>Добавить книгу</h1>
+    <form action="/admin/book" class="add_book" method="post">
+        {{ form.csrf_token() }}
+        {% for field in form if field.name not in ['csrf_token', 'submit'] %}
+            {% if field.errors %}
+                <p>{{ field.label(class='add-book-error') }} {{ field(class='add-book-error', placeholder=field.errors[0], value='') }}</p>
+            {% else %}
+                <p>{{ field.label(class='add-book-normal') }} {{ field(class='add-book-normal') }}</p>
+            {% endif %}
+        {% endfor %}
+        {{ form.submit(class='add-book') }}
+    </form>
+{% endblock %}

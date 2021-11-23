@@ -3,111 +3,111 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 body {
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  font-family: "Open Sans";
-  background: #ffe4b5;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: "Open Sans";
+    background: #ffe4b5;
 }
 
 header.header {
-  display: flex;
-  justify-content: space-between;
-  background: #ffe4b5;
-  border-bottom: 2px solid #ffdab9;
+    display: flex;
+    justify-content: space-between;
+    background: #ffe4b5;
+    border-bottom: 2px solid #ffdab9;
 }
 
 nav {
-  padding: 15px;
+    padding: 15px;
 }
 
 header.header nav {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 
 header.header nav div {
-  padding: 0px 15px 0px 15px;
+    padding: 0px 15px 0px 15px;
 }
 
 header.header a {
-  text-decoration: none;
-  color: #ffa07a;
-  transition: all 0.5s ease 0s;
+    text-decoration: none;
+    color: #ffa07a;
+    transition: all 0.5s ease 0s;
 }
 
 header.header a:hover {
-  color: #ff7f50;
+    color: #ff7f50;
 }
 
 header.header div.icon a {
-  color: #030303;
-  font-family: "Poppins";
-  font-size: 30px;
+    color: #030303;
+    font-family: "Poppins";
+    font-size: 30px;
 }
 
 header.header div.icon {
-  padding: 10px 0px 10px 10px;
+    padding: 10px 0px 10px 10px;
 }
 
 header.header div.login {
-  margin: 10px 20px 10px 10px;
+    margin: 10px 20px 10px 10px;
 }
 
 header.header div.login a[href="/login"] {
-  border: 2px solid #ff7061;
-  background: #ff6347;
-  display: inline-block;
-  color: #fafafa;
-  padding: 5px;
-  border-radius: 5px;
-  margin: 0px 6px;
+    border: 2px solid #ff7061;
+    background: #ff6347;
+    display: inline-block;
+    color: #fafafa;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0px 6px;
 }
 
 header.header div.login a[href="/registration"] {
-  border: 2px solid #22ffaa;
-  background: #00fa9a;
-  display: inline-block;
-  color: #fafafa;
-  padding: 5px;
-  border-radius: 5px;
-  margin: 0px 6px;
+    border: 2px solid #22ffaa;
+    background: #00fa9a;
+    display: inline-block;
+    color: #fafafa;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0px 6px;
 }
 
 div.content {
-  padding: 10px 10%;
-  background: #fffacd;
+    padding: 10px 10%;
+    background: #fffacd;
 }
 
 h1.title {
-  font-size: 40px;
-  font-family: "Zen Antique Soft";
+    font-size: 40px;
+    font-family: "Zen Antique Soft";
 }
 
 img.lib {
-  border: 10px solid #ffe4b5;
+    border: 10px solid #ffe4b5;
 }
 
 i {
-  float: right;
-  clear: both;
+    float: right;
+    clear: both;
 }
 
 h2.title {
-  font-size: 37px;
-  font-family: "Zen Antique Soft";
+    font-size: 37px;
+    font-family: "Zen Antique Soft";
 }
 
 footer.footer {
-  background: #ffe4b5;
-  border-top: 2px solid #ffdab9;
-  padding: 10px 10%;
+    background: #ffe4b5;
+    border-top: 2px solid #ffdab9;
+    padding: 10px 10%;
 }
 
 footer.footer a {
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px 30px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 30px;
 }
 
 .normal-registration,
@@ -116,83 +116,120 @@ footer.footer a {
 .error-login,
 .normal-books,
 .error-books {
-  width: 400px;
-  height: 30px;
-  border-radius: 10px;
-  font-size: 20px;
-  outline: 0;
-  outline-offset: 0;
-  border: 2px solid rgb(30, 30, 50);
+    width: 400px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    outline: 0;
+    outline-offset: 0;
+    border: 2px solid rgb(30, 30, 50);
 }
 
 .error-books,
 .normal-books {
-  margin: 10px;
+    margin: 10px;
 }
 
 input.registration,
 input.login {
-  width: 500px;
-  height: 50px;
-  outline: 0;
-  outline-offset: 0;
-  font-size: 27px;
-  border-radius: 10px;
-  background: rgb(50, 255, 50);
-  border: 4px solid rgb(30, 255, 30);
-  margin: 15px;
-  color: white;
+    width: 500px;
+    height: 50px;
+    outline: 0;
+    outline-offset: 0;
+    font-size: 27px;
+    border-radius: 10px;
+    background: rgb(50, 255, 50);
+    border: 4px solid rgb(30, 255, 30);
+    margin: 15px;
+    color: white;
 }
 
 .error-registration::-webkit-input-placeholder,
 .error-login::-webkit-input-placeholder,
-.error-books::-webkit-input-placeholder {
-  color: rgb(240, 50, 50);
+.error-books::-webkit-input-placeholder,
+.add-book-error::-webkit-input-placeholder {
+    color: rgb(240, 50, 50);
 }
 
 input.checkbox {
-  width: 25px;
-  height: 25px;
+    width: 25px;
+    height: 25px;
 }
 
 div.userinfo {
-  display: flex;
+    display: flex;
 }
 
 div.mainuserinfo {
-  padding: 0px 20px;
+    padding: 0px 20px;
 }
 
 img[alt="Аватар"] {
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
 img[alt="Книга"] {
-  float: left;
+    float: left;
 }
 
 div.book {
-  clear: both;
-  padding: 50px 0px;
+    clear: both;
+    padding: 50px 0px;
 }
 
-input.search {
-  width: 300px;
-  height: 50px;
-  outline: 0;
-  outline-offset: 0;
-  font-size: 23px;
-  border-radius: 10px;
-  background: rgb(230, 40, 40);
-  border: 4px solid rgb(240, 20, 20);
-  margin: 15px;
-  color: white;
+input.search,
+input.add-book,
+input.add-rsv {
+    width: 300px;
+    height: 50px;
+    outline: 0;
+    outline-offset: 0;
+    font-size: 23px;
+    border-radius: 10px;
+    background: rgb(230, 40, 40);
+    border: 4px solid rgb(240, 20, 20);
+    margin: 15px;
+    color: white;
 }
 
 div.book-main {
-  display: flex;
+    display: flex;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
+
+a.adminlink {
+    display: inline-block;
+    padding: 2px 20px;
+
+}
+
+label.add-book-normal,
+label.add-book-error,
+label.add-rsv-normal {
+    display: inline-block;
+    width: 150px;
+}
+
+input.add-book-error,
+input.add-book-normal,
+select.add-book-normal,
+select.add-book-error,
+textarea.add-book-normal,
+select.add-rsv-normal {
+    display: inline-block;
+    width: 180px;
+    height: 30px;
+    border: 2px solid rgb(30, 30, 50);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+textarea.add-book-normal {
+    width: 450px;
+    height: 180px;
+}
+

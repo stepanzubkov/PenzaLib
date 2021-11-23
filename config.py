@@ -1,8 +1,5 @@
-from re import S
-
-from flask_mail import Mail
-
-
+import datetime
+PERMANENT_SESSION_LIFETIME = datetime.timedelta(days=365)
 DEBUG = True
 SECRET_KEY = 'fjgh748rsjgi847w890d84y97u9u9utg943-9trguu-039'
 SQLALCHEMY_TRACK_MODIFICATIONS = False

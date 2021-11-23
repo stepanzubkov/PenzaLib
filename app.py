@@ -1,28 +1,29 @@
-
-from flask import Flask, render_template, flash, abort, redirect, url_for, request
-from flask_mail import Mail, Message
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_required, login_user, logout_user, current_user
-
-from base64 import b64encode
 import os
+from base64 import b64encode
 from random import choice
 from threading import Thread
 
+from flask import Flask, render_template, flash, abort, redirect, url_for, request
+from flask_login import login_required, login_user, current_user
+from flask_mail import Mail, Message
+from werkzeug.security import generate_password_hash, check_password_hash
+
+from admin import admin
 from db import db, migrate, Users, Books, Reservations
 from forms import BooksForm, RegistrationForm, LoginForm
-from login import manager, load_user
+from login import manager
 from user import User
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
+
+app.register_blueprint(admin, url_prefix='/admin')
 
 mail = Mail(app)
 
 manager.init_app(app)
 db.init_app(app)
 migrate.init_app(app, db)
-
 
 manager.login_view = 'login'
 manager.login_message = 'Авторизуйтесь для доступа к закрытым страницам'
@@ -36,9 +37,9 @@ def async_send_mail(app, msg):
 
 def send_mail(subject, recipient, template, **kwargs):
     msg = Message(
-        subject,      sender=app.config['MAIL_DEFAULT_SENDER'],  recipients=[recipient])
-    msg.html = render_template(template,  **kwargs)
-    thr = Thread(target=async_send_mail,  args=[app,  msg])
+        subject, sender=app.config['MAIL_DEFAULT_SENDER'], recipients=[recipient])
+    msg.html = render_template(template, **kwargs)
+    thr = Thread(target=async_send_mail, args=[app, msg])
     thr.start()
     return thr
 
@@ -58,8 +59,10 @@ def registration():
             flash('Такой аккаунт уже существует', category='error')
         else:
             try:
-                user = Users(name=form.name.data, email=form.email.data, password=generate_password_hash(form.password.data),
-                             age=form.age.data, verified=False, access_key=b64encode(os.urandom(50)).decode('utf-8').replace('/', ''))
+                user = Users(name=form.name.data, email=form.email.data,
+                             password=generate_password_hash(form.password.data),
+                             age=form.age.data, verified=False,
+                             access_key=b64encode(os.urandom(50)).decode('utf-8').replace('/', ''))
 
                 db.session.add(user)
                 db.session.commit()
@@ -122,10 +125,10 @@ def books():
     books = Books.query.filter(
         Books.name.like(request.args.get('name') if str(request.args.get(
             'name')) != '' and str(request.args.get(
-                'name')) != 'None' else '%'),
+            'name')) != 'None' else '%'),
         Books.author.like(request.args.get('author') if str(request.args.get(
             'author')) != '' and str(request.args.get(
-                'author')) != 'None' else '%'),
+            'author')) != 'None' else '%'),
     )
     match request.args.get('sorting'):
         case 'standart':

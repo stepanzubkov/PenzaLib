@@ -1,0 +1,11 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+    {{ super() }}
+    <center>
+        <h1>Вход в админ панель</h1>
+        <form action="/admin/login" method="post" class='admin_login'>
+            <input type="password" name="admin_key" id="admin_key">
+            <input type="submit" value="Войти">
+        </form>
+    </center>
+{% endblock %}
