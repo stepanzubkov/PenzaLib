@@ -9,6 +9,7 @@ from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from admin import admin
+from api import api
 from db import db, migrate, Users, Books, Reservations
 from forms import BooksForm, RegistrationForm, LoginForm
 from login import manager
@@ -18,6 +19,7 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
 app.register_blueprint(admin, url_prefix='/admin')
+app.register_blueprint(api, url_prefix='/api')
 
 mail = Mail(app)
 
@@ -84,7 +86,7 @@ def accept(key):
         db.session.commit()
         userlogin = User().create(user)
         login_user(userlogin, remember=True)
-        return f'Успешная регистрация!'
+        return redirect(url_for('profile'))
     except Exception as e:
         print(e)
         db.session.rollback()
@@ -99,12 +101,13 @@ def login():
     user = Users.query.filter_by(email=form.email.data).first() if form.email.data in [
         u.email for u in Users.query.all()] else None
     if form.validate_on_submit():
-        if user and check_password_hash(form.password.data, user.password):
+        if user and check_password_hash(user.password, form.password.data):
             if user.verified == False:
                 flash('Почта не подтверждена')
             else:
                 userlogin = User().create(user)
                 login_user(userlogin, remember=form.remember.data)
+                return redirect(url_for('profile'))
         else:
             flash('Неправильные данные', category='error')
     return render_template('login.html', form=form)

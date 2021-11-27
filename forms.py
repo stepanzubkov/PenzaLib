@@ -34,8 +34,8 @@ class BooksForm(FlaskForm):
         ('standart', 'По умолчанию'),
         ('by_name', 'По имени'),
         ('by_author', 'По автору'),
-        ('count', 'По возрастанию количества'),
-        ('desc_count', 'По убыванию количества')
+        ('count', 'По убыванию количества'),
+        ('desc_count', 'По возрастанию количества')
     ])
     submit = SubmitField('Поиск')
 
